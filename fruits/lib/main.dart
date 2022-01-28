@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:fruits/screens/dashboard.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const FruitApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class FruitApp extends StatelessWidget {
+  const FruitApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
+      home: Dashboard(),
     );
   }
 }
