@@ -12,16 +12,15 @@ class ClockView extends StatefulWidget {
 class _ClockViewState extends State<ClockView> {
 
   @override void initState() {
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {});
     });
-
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       width: 300,
       child: CustomPaint(
@@ -113,7 +112,6 @@ class ClockPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-
     return true;
   }
 

@@ -13,10 +13,10 @@ class _HomepageViewState extends State<HomepageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF2D2F41),
       body: Container(
         alignment: Alignment.center,
-        color: Color(0xFF2D2F41),
-        child: ClockView(),
+        child: const ClockView(),
       ),
     );
   }
