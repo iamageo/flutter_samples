@@ -3,7 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class ClockView extends StatefulWidget {
-  const ClockView({Key? key}) : super(key: key);
+
+  final double size;
+
+  const ClockView({Key? key, required this.size}) : super(key: key);
 
   @override
   _ClockViewState createState() => _ClockViewState();
@@ -21,8 +24,8 @@ class _ClockViewState extends State<ClockView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
-      width: 300,
+      height: widget.size,
+      width: widget.size,
       child: CustomPaint(
         painter: ClockPainter(),
       ),
