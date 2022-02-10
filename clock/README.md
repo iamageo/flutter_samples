@@ -1,16 +1,17 @@
-# clock
+## 🔨 Sobre o projeto
 
-A new Flutter project.
+<img src="" align="right" width="32%"/>
 
-## Getting Started
+Esse projeto é capaz de criar e salvar alarme e timer.
 
-This project is a starting point for a Flutter application.
+## ✔️ Técnicas e tecnologias
 
-A few resources to get you started if this is your first Flutter project:
+- `Material Design`: Refinamento da interface e componentes.
+- `sqflite`: para manipular um banco de dados SQLite.
+- `ListView`: Para gerenciar os itens inseridos no SQLite em lista na abas de Alarme.
+- `Provider`: Para distribuir e controlar os widgets do menu lateral.
+- `Local Notifications`: Para mostrar notificações locais do Alarme.
+- `DottedBorder`: Para criar bordas pontilhadas na adição de alarme.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+

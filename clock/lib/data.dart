@@ -1,3 +1,4 @@
+import 'package:clock/constants/constants.dart';
 import 'package:clock/providers/alarm_info.dart';
 import 'package:clock/providers/enums.dart';
 import 'package:clock/providers/menu_info.dart';
@@ -10,5 +11,7 @@ List<MenuInfo> listMenu = [
 ];
 
 List<AlarmInfo> listAlarms = [
-  AlarmInfo(DateTime.now().add(Duration(hours: 1)), "Office", true),
+  AlarmInfo(DateTime.now().add(Duration(hours: 1)), "Office", true, GradientColors.fire),
+  AlarmInfo(DateTime.now().add(Duration(hours: 3)), "Sport", true, GradientColors.mango),
+  AlarmInfo(DateTime.now().add(Duration(hours: 1)), "Lazer", true, GradientColors.sky),
 ];
