@@ -2,9 +2,28 @@ import 'package:clock/homepage.view.dart';
 import 'package:clock/providers/enums.dart';
 import 'package:clock/providers/menu_info.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  var initialSettingsAndroid = AndroidInitializationSettings('launch_background');
+  var initialSettingsIOS = IOSInitializationSettings(
+    requestAlertPermission: true,
+    requestBadgePermission: true,
+    requestSoundPermission: true,
+    onDidReceiveLocalNotification: (int id, String title, String body, String payload) async {});
+
+  var initialSettings = InitializationSettings(initialSettingsAndroid, initialSettingsIOS);
+
+  await flutterLocalNotificationsPlugin.initialize(initialSettings, onSelectNotification: (String payload) async {
+    if(payload != null)
+      debugPrint("Notification payload" + payload);
+  });
+
   runApp(const MyApp());
 }
 
