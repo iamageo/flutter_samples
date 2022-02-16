@@ -1,6 +1,6 @@
 ## 🔨 Sobre o projeto
 
-<img src="" align="right" width="32%"/>
+<img src="https://user-images.githubusercontent.com/26925002/154329249-3f19fc4e-5943-47b8-9372-dbe6326a0973.gif" align="right" width="32%"/>
 
 Esse projeto é capaz de criar e salvar alarme e timer.
 
