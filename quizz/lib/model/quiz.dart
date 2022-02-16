@@ -2,16 +2,16 @@ import '../network/result.dart';
 
 class Quiz {
   late int? responseCode;
-  late List<Results> results;
+  late List<QuestionItem> results;
 
   Quiz({required this.responseCode, required this.results});
 
   Quiz.fromJson(Map<String, dynamic> json) {
     responseCode = json['response_code'];
     if (json['results'] != null) {
-      results = <Results>[];
+      results = <QuestionItem>[];
       json['results'].forEach((v) {
-        results.add(Results.fromJson(v));
+        results.add(QuestionItem.fromJson(v));
       });
     }
   }
