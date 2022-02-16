@@ -37,8 +37,7 @@ class QuestionCard extends StatelessWidget {
           const SizedBox(height: kDefaultPadding / 2),
           ...List.generate(
             question.allAnswers.length,
-            (index) => Option(
-                index: index, text: question.allAnswers[index], press: () => {
+            (index) => Option(index: index, text: question.allAnswers[index], press: () => {
                 _controller.checkAns(question, index)
             }
                 ),

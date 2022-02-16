@@ -87,7 +87,7 @@ class QuestionController extends GetxController
     _selectedAns = question.allAnswers[selectedIndex].toString();
     _selectedIdx = selectedIndex;
 
-    if (_selectedAns == "False") _numOfCorrectAns++;
+    if (_selectedAns == _correctAns) _numOfCorrectAns++;
     _animationController.stop();
     update();
 

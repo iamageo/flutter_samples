@@ -13,8 +13,14 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     QuestionController _questionController = Get.put(QuestionController());
-    return SafeArea(
-      child: Obx(() {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        actions: [
+          FlatButton(onPressed: _questionController.nextQuestion, child: const Text("Skip")),
+        ],
+      ),
+      body: Obx(() {
         if (_questionController.isLoading.value) {
           return const Center(
             child: CircularProgressIndicator(),
@@ -31,8 +37,8 @@ class Body extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
           child: ProgressBar(),
         ),
         const SizedBox(height: 16),
