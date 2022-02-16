@@ -13,7 +13,7 @@ Tech stack & Open-source libraries
 - `FutureBuilder`: Componente para carregar dados de maneira assíncrona.
 
 
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 
 ## Clock ⏰
 
