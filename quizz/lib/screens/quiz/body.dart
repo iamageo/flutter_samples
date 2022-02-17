@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:quizz/quiz/progress_bar.dart';
-import 'package:quizz/quiz/question_card.dart';
+import 'package:quizz/screens/quiz/progress_bar.dart';
+import 'package:quizz/screens/quiz/question_card.dart';
 
-import '../constants.dart';
-import '../controller/question_controller.dart';
+import '../../constants.dart';
+import '../../controller/question_controller.dart';
+
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class Body extends StatelessWidget {
     QuestionController _questionController = Get.put(QuestionController());
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         actions: [
           FlatButton(onPressed: _questionController.nextQuestion, child: const Text("Skip")),
         ],

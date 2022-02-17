@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
-import '../constants.dart';
-import '../controller/question_controller.dart';
+import '../../constants.dart';
+import '../../controller/question_controller.dart';
 
 class ProgressBar extends StatelessWidget {
   const ProgressBar({Key? key}) : super(key: key);

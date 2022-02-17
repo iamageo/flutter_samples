@@ -3,12 +3,11 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:quizz/network/result.dart';
 
-import '../constants.dart';
-import '../controller/question_controller.dart';
+import '../../constants.dart';
+import '../../controller/question_controller.dart';
 import 'option.dart';
 
 class QuestionCard extends StatelessWidget {
-
   QuestionCard({
     required this.question,
   }) : super();
@@ -37,10 +36,10 @@ class QuestionCard extends StatelessWidget {
           const SizedBox(height: kDefaultPadding / 2),
           ...List.generate(
             question.allAnswers.length,
-            (index) => Option(index: index, text: question.allAnswers[index], press: () => {
-                _controller.checkAns(question, index)
-            }
-                ),
+            (index) => Option(
+                index: index,
+                text: question.allAnswers[index],
+                press: () => {_controller.checkAns(question, index)}),
           ),
         ],
       ),

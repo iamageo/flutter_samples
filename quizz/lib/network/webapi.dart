@@ -10,12 +10,12 @@ import 'package:quizz/network/result.dart';
 import '../model/quiz.dart';
 
 class RemoteServices {
-  Future<List<QuestionItem>> fetchQuestions() async {
+  Future<List<QuestionItem>> fetchQuestions(int questionsNumber) async {
     late Quiz quiz;
 
     final Client client =
         HttpClientWithInterceptor.build(interceptors: [LoggingInterceptor()]);
-    var res = await client.get("https://opentdb.com/api.php?amount=20");
+    var res = await client.get("https://opentdb.com/api.php?amount=$questionsNumber");
     if (res.statusCode == 200) {
       var decRes = jsonDecode(res.body);
       quiz = Quiz.fromJson(decRes);

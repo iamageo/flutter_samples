@@ -6,6 +6,7 @@ import 'package:get/state_manager.dart';
 import 'package:quizz/network/webapi.dart';
 
 import '../network/result.dart';
+import '../screens/score/score.dart';
 
 class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
@@ -76,7 +77,7 @@ class QuestionController extends GetxController
   void fetchProducts() async {
     isLoading(true);
     await RemoteServices()
-        .fetchQuestions()
+        .fetchQuestions(5)
         .then((value) => {_questions = value});
     isLoading(false);
   }
@@ -106,7 +107,7 @@ class QuestionController extends GetxController
 
       _animationController.forward().whenComplete(nextQuestion);
     } else {
-      //Get.to(ScoreScreen());
+      Get.to(() => ScoreScreen());
     }
   }
 
