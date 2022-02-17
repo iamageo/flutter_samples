@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:quizz/screens/quiz/quiz_screen.dart';
+import 'package:quizz/screens/welcome/welcome.dart';
 
 import '../../constants.dart';
 import '../../controller/question_controller.dart';
@@ -19,7 +20,7 @@ class ScoreScreen extends StatelessWidget {
                 Expanded(
                   child: Center(
                     child: Text(
-                      "Score",
+                      "Parabéns .${_qnController.username}",
                       style: Theme.of(context)
                           .textTheme
                           .headline3
@@ -42,7 +43,7 @@ class ScoreScreen extends StatelessWidget {
                 Expanded(
                   child: Center(
                     child: ElevatedButton(onPressed: () {
-                      Get.to(() => const QuizScreen());
+                      Get.to(() => Welcome());
                       Get.deleteAll();
                     },
                         child: Container(

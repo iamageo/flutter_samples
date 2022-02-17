@@ -1,8 +1,7 @@
 import 'dart:convert';
-
-import 'package:http/http.dart';
-import 'package:http_interceptor/http_client_with_interceptor.dart';
-import 'package:http_interceptor/interceptor_contract.dart';
+import 'dart:convert' as convert;
+import 'package:http/http.dart' as http;
+import 'package:http_interceptor/http/interceptor_contract.dart';
 import 'package:http_interceptor/models/request_data.dart';
 import 'package:http_interceptor/models/response_data.dart';
 import 'package:quizz/network/result.dart';
@@ -13,9 +12,14 @@ class RemoteServices {
   Future<List<QuestionItem>> fetchQuestions(int questionsNumber) async {
     late Quiz quiz;
 
-    final Client client =
-        HttpClientWithInterceptor.build(interceptors: [LoggingInterceptor()]);
-    var res = await client.get("https://opentdb.com/api.php?amount=$questionsNumber");
+    var url = Uri.http("www.opentdb.com", "/api.php?amount=$questionsNumber");
+
+    var res = await http.get(url,
+      headers: {
+        'content-Type': 'application/json',
+        'charset': 'utf-8'
+      },
+    );
     if (res.statusCode == 200) {
       var decRes = jsonDecode(res.body);
       quiz = Quiz.fromJson(decRes);

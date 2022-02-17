@@ -12,6 +12,7 @@ class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
   late AnimationController _animationController;
   late Animation _animation;
+
   var isLoading = true.obs;
 
   Animation get animation => _animation;
@@ -49,6 +50,13 @@ class QuestionController extends GetxController
   int get numOfCorrectAns => _numOfCorrectAns;
 
   get results => null;
+
+  late String _username;
+  String get username => _username;
+
+  set username(String value) {
+    _username = value;
+  }
 
   @override
   void onInit() {
