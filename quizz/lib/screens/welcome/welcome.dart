@@ -43,7 +43,7 @@ class Welcome extends StatelessWidget {
                         labelText: "Username",
                       ),
                       onSaved: (value) {
-                        _qnController.username = value!;
+                        _qnController.changeName(value!);
                       },
                     ),
               )
@@ -53,7 +53,7 @@ class Welcome extends StatelessWidget {
             child: Center(
               child: ElevatedButton(
                   onPressed: () {
-                    Get.to(() => const QuizScreen());
+                    Get.to(() => const QuizScreen(), arguments: []);
                   },
                   child: Container(
                       padding: const EdgeInsets.all(16),

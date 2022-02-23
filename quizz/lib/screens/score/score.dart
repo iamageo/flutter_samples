@@ -19,14 +19,13 @@ class ScoreScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: Center(
-                    child: Text(
-                      "Parabéns .${_qnController.username}",
+                    child: Obx(() => Text(_qnController.name.value,
                       style: Theme.of(context)
                           .textTheme
                           .headline3
                           ?.copyWith(color: kSecondaryColor),
                     ),
-                  ),
+                  )),
                 ),
                 Expanded(
                   child: Center(

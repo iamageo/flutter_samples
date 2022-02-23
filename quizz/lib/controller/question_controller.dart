@@ -51,11 +51,10 @@ class QuestionController extends GetxController
 
   get results => null;
 
-  late String _username;
-  String get username => _username;
+  var name = "Geovani".obs;
 
-  set username(String value) {
-    _username = value;
+  changeName(String s) {
+    name.value = s;
   }
 
   @override
