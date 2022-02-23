@@ -7,11 +7,10 @@
 A simple fruit register app using sqflite.
 
 Tech stack & Open-source libraries
-- `Material Design`: Refinamento da interface e componentes.
-- `sqflite`: para manipular um banco de dados SQLite.
-- `async/await`: Ferramenta do Dart para manipulação de processos assíncronos que dispensa o uso do then.
-- `FutureBuilder`: Componente para carregar dados de maneira assíncrona.
-
+- `Material Design`: Refinement of the interface and components.
+- `sqflite`: to manipulate a SQLite database.
+- `async/await`: Dart tool for handling asynchronous processes that do not require the use of then.
+- `FutureBuilder`: Component to load data asynchronously.
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -19,13 +18,13 @@ Tech stack & Open-source libraries
 
 <img src="https://user-images.githubusercontent.com/26925002/154329249-3f19fc4e-5943-47b8-9372-dbe6326a0973.gif" align="right" width="32%"/>
 
-Esse projeto é capaz de criar e salvar um alarme.
+This project register alarm
 
 Tech stack & Open-source libraries
-- `Material Design`: Refinamento da interface e componentes.
-- `sqflite`: para manipular um banco de dados SQLite.
-- `async/await`: Para utilizar chamadas assíncronas.
-- `ListView`: Para gerenciar os itens inseridos no SQLite em lista na abas de Alarme.
-- `Provider`: Para distribuir e controlar os widgets do menu lateral.
-- `Local Notifications`: Para mostrar notificações locais do Alarme.
-- `DottedBorder`: Para criar bordas pontilhadas na adição de alarme.
+- `Material Design`: Refinement of the interface and components.
+- `sqflite`: to manipulate a SQLite database.
+- `async/await`: To use asynchronous calls.
+- `ListView`: To manage the items entered in SQLite in the list below Alarm.
+- `Provider`: To distribute and control side menu widgets.
+- `Local Notifications`: to show local alarm notifications.
+- `DottedBorder`: To create dotted borders when adding alarm.
