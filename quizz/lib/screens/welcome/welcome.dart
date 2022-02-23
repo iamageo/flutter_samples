@@ -9,6 +9,7 @@ import '../../controller/question_controller.dart';
 class Welcome extends StatelessWidget {
 
   QuestionController _qnController = Get.put(QuestionController());
+  final TextEditingController _nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,21 +32,15 @@ class Welcome extends StatelessWidget {
             child: Center(
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                child: TextFormField(
-                      restorationId: 'name_field',
-                      textInputAction: TextInputAction.next,
-                      textCapitalization: TextCapitalization.words,
-                      decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Colors.black,
-                        icon: Icon(Icons.person),
-                        hintText: "type..",
-                        labelText: "Username",
-                      ),
-                      onSaved: (value) {
-                        _qnController.changeName(value!);
-                      },
-                    ),
+                child: TextField(
+                  controller: _nameController,
+                  decoration: const InputDecoration(
+                    labelText: 'name',
+                  ),
+                  style: const TextStyle(
+                    fontSize: 24.0,
+                  ),
+                ),
               )
             ),
           ),
@@ -53,11 +48,15 @@ class Welcome extends StatelessWidget {
             child: Center(
               child: ElevatedButton(
                   onPressed: () {
-                    Get.to(() => const QuizScreen(), arguments: []);
+                    final String name = _nameController.text;
+
+                    _qnController.changeName(name);
+
+                    Get.to(() => const QuizScreen());
                   },
                   child: Container(
                       padding: const EdgeInsets.all(16),
-                      child: const Text("Start"))),
+                      child: const Text("Start quizz"))),
             ),
           ),
         ],

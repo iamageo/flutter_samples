@@ -50,6 +50,7 @@ class Option extends StatelessWidget {
                 children: [
                   Text(
                     "${index + 1}. $text",
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(color: getTheRightColor(), fontSize: 16),
                   ),
                   Container(

@@ -6,9 +6,9 @@ class QuizScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       extendBodyBehindAppBar: true,
-      body: const Body(),
+      body: Body(),
     );
   }
 }

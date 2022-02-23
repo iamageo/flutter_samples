@@ -51,7 +51,7 @@ class QuestionController extends GetxController
 
   get results => null;
 
-  var name = "Geovani".obs;
+  var name = "".obs;
 
   changeName(String s) {
     name.value = s;
@@ -84,7 +84,7 @@ class QuestionController extends GetxController
   void fetchProducts() async {
     isLoading(true);
     await RemoteServices()
-        .fetchQuestions(5)
+        .fetchQuestions(30)
         .then((value) => {_questions = value});
     isLoading(false);
   }
@@ -99,7 +99,7 @@ class QuestionController extends GetxController
     _animationController.stop();
     update();
 
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 2), () {
       nextQuestion();
     });
   }

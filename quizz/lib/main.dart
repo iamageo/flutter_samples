@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quizz/screens/quiz/quiz_screen.dart';
 import 'package:quizz/screens/welcome/welcome.dart';
 
 void main() => runApp(MyApp());
