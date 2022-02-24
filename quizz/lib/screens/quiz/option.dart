@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:html_unescape/html_unescape.dart';
 
 import '../../constants.dart';
 import '../../controller/question_controller.dart';
@@ -18,6 +19,7 @@ class Option extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var unescape = HtmlUnescape();
     return GetBuilder<QuestionController>(
         init: QuestionController(),
         builder: (qnController) {
@@ -49,7 +51,7 @@ class Option extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "${index + 1}. $text",
+                    "${index + 1}. ${unescape.convert(text)}",
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(color: getTheRightColor(), fontSize: 16),
                   ),

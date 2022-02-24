@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:html_unescape/html_unescape.dart';
 import 'package:quizz/network/result.dart';
 
 import '../../constants.dart';
@@ -17,6 +18,9 @@ class QuestionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     QuestionController _controller = Get.put(QuestionController());
+    var unescape = HtmlUnescape();
+
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       padding: const EdgeInsets.all(kDefaultPadding),
@@ -28,7 +32,7 @@ class QuestionCard extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              question.question!,
+              unescape.convert(question.question!),
               style: Theme.of(context)
                   .textTheme
                   .headline6

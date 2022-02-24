@@ -13,6 +13,7 @@ dependencies:
   http_interceptor:
   # to handle SVGs for Android, iOS, and Web
   flutter_svg: ^0.21.0+1
+  html_unescape: ^2.0.0
   # state management, intelligent dependency injection, and route management
   get: ^4.1.4
   flutter:
