@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:convert' as convert;
+
 import 'package:http/http.dart' as http;
 import 'package:http_interceptor/http/interceptor_contract.dart';
 import 'package:http_interceptor/models/request_data.dart';
@@ -9,16 +9,14 @@ import 'package:quizz/network/result.dart';
 import '../model/quiz.dart';
 
 class RemoteServices {
-  Future<List<QuestionItem>> fetchQuestions(int questionsNumber) async {
+  Future<List<QuestionItem>> fetchQuestions(int number) async {
     late Quiz quiz;
 
-    var url = Uri.http("www.opentdb.com", "/api.php?amount=$questionsNumber");
+    var url = Uri.http("www.opentdb.com", "/api.php?amount=$number");
 
-    var res = await http.get(url,
-      headers: {
-        'content-Type': 'application/json',
-        'charset': 'utf-8'
-      },
+    var res = await http.get(
+      url,
+      headers: {'content-Type': 'application/json', 'charset': 'utf-8'},
     );
     if (res.statusCode == 200) {
       var decRes = jsonDecode(res.body);

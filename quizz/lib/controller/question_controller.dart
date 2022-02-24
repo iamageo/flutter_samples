@@ -84,7 +84,7 @@ class QuestionController extends GetxController
   void fetchProducts() async {
     isLoading(true);
     await RemoteServices()
-        .fetchQuestions(30)
+        .fetchQuestions(5)
         .then((value) => {_questions = value});
     isLoading(false);
   }

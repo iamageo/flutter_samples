@@ -19,7 +19,8 @@ class ScoreScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: Center(
-                    child: Obx(() => Text(_qnController.name.value,
+                    child: Obx(() =>
+                        Text("Nice job, ${_qnController.name.value}",
                       style: Theme.of(context)
                           .textTheme
                           .headline3
