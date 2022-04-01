@@ -24,7 +24,6 @@ class _AlarmPageState extends State<AlarmPage> {
   void initState() {
     _alarmTime = DateTime.now();
     _alarmHelper.initializeDatabase().then((value) {
-      print('------database intialized');
       loadAlarms();
     });
     super.initState();
@@ -104,11 +103,6 @@ class _AlarmPageState extends State<AlarmPage> {
                                     ),
                                   ],
                                 ),
-                                Switch(
-                                  onChanged: (bool value) {},
-                                  value: true,
-                                  activeColor: Colors.white,
-                                ),
                               ],
                             ),
                             const Text(
@@ -128,7 +122,7 @@ class _AlarmPageState extends State<AlarmPage> {
                                       fontWeight: FontWeight.w700),
                                 ),
                                 IconButton(
-                                    icon: Icon(Icons.delete),
+                                    icon: const Icon(Icons.delete),
                                     color: Colors.white,
                                     onPressed: () {
                                       deleteAlarm(alarm.id);
@@ -174,6 +168,7 @@ class _AlarmPageState extends State<AlarmPage> {
                                         return Container(
                                           padding: const EdgeInsets.all(32),
                                           child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
                                             children: [
                                               FlatButton(
                                                 onPressed: () async {
@@ -203,26 +198,20 @@ class _AlarmPageState extends State<AlarmPage> {
                                                     });
                                                   }
                                                 },
-                                                child: Text(
-                                                  _alarmTimeString!,
-                                                  style:
-                                                  TextStyle(fontSize: 32),
+                                                child: Container(
+                                                  margin: const EdgeInsets.all(15.0),
+                                                  padding: const EdgeInsets.all(3.0),
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: const BorderRadius.all(Radius.circular(12)),
+                                                      border: Border.all(color: Colors.blueAccent),
+                                                  ),
+                                                  child: Text(
+                                                    _alarmTimeString!,
+                                                    style:
+                                                    const TextStyle(fontSize: 50),
+                                                  ),
+
                                                 ),
-                                              ),
-                                              const ListTile(
-                                                title: Text('Repeat'),
-                                                trailing: Icon(
-                                                    Icons.arrow_forward_ios),
-                                              ),
-                                              const ListTile(
-                                                title: Text('Sound'),
-                                                trailing: Icon(
-                                                    Icons.arrow_forward_ios),
-                                              ),
-                                              const ListTile(
-                                                title: Text('Title'),
-                                                trailing: Icon(
-                                                    Icons.arrow_forward_ios),
                                               ),
                                               FloatingActionButton.extended(
                                                 onPressed: onSaveAlarm,

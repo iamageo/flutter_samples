@@ -24,12 +24,6 @@ class _ClockPageState extends State<ClockPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Flexible(
-            fit: FlexFit.tight,
-            flex: 1,
-            child: Text("Clock",
-                style: TextStyle(color: Colors.white, fontSize: 24)),
-          ),
           Flexible(
             flex: 2,
             child: Column(
@@ -52,31 +46,6 @@ class _ClockPageState extends State<ClockPage> {
               ),
             ),
           ),
-          Flexible(
-              flex: 2,
-              fit: FlexFit.tight,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text("Timezone",
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.language,
-                        color: Colors.white,
-                      ),
-                      const SizedBox(
-                        width: 16,
-                        height: 16,
-                      ),
-                      Text("UTC" + offsetSign + timezoneString,
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 20)),
-                    ],
-                  ),
-                ],
-              ))
         ],
       ),
     );
