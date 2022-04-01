@@ -10,7 +10,7 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterL
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  var initialSettingsAndroid = AndroidInitializationSettings('launch_background');
+  var initialSettingsAndroid = const AndroidInitializationSettings('launch_background');
   var initialSettingsIOS = IOSInitializationSettings(
     requestAlertPermission: true,
     requestBadgePermission: true,
@@ -20,8 +20,9 @@ void main() async {
   var initialSettings = InitializationSettings(initialSettingsAndroid, initialSettingsIOS);
 
   await flutterLocalNotificationsPlugin.initialize(initialSettings, onSelectNotification: (String payload) async {
-    if(payload != null)
+    if(payload != null) {
       debugPrint("Notification payload" + payload);
+    } 
   });
 
   runApp(const MyApp());

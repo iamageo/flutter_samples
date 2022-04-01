@@ -38,7 +38,7 @@ class _ClockPageState extends State<ClockPage> {
                 Text(formatedTime,
                     style: const TextStyle(color: Colors.white, fontSize: 64)),
                 Text(formatedDate,
-                    style: const TextStyle(color: Colors.white, fontSize: 20)),
+                    style: const TextStyle(color: Colors.white, fontSize: 14)),
               ],
             ),
           ),

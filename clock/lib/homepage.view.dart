@@ -1,6 +1,7 @@
 import 'package:clock/constants/constants.dart';
 import 'package:clock/providers/enums.dart';
 import 'package:clock/providers/menu_info.dart';
+import 'package:clock/view/about.view.dart';
 import 'package:clock/view/alarm.view.dart';
 import 'package:clock/view/clockpage.view.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,40 +22,27 @@ class _HomepageViewState extends State<HomepageView> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color(0xFF2D2F41),
-        body: Row(
+        body: Column(
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: listMenu
-                  .map((currentMenuItem) => buildMenuButton(currentMenuItem))
-                  .toList(),
-            ),
-            const VerticalDivider(
-              color: Colors.white,
-              width: 2,
-            ),
+
             Expanded(
               child: Consumer<MenuInfo>(builder:
                   (BuildContext context, MenuInfo value, Widget? child) {
                 if (value.menuType == MenuType.clock) {
                   return ClockPage();
                 } else if (value.menuType == MenuType.alarm) {
-                  return const AlarmPage();
+                  return AlarmPage();
                 } else {
-                  return RichText(
-                    text: TextSpan(
-                      style: const TextStyle(fontSize: 20),
-                      children:  <TextSpan>[
-                        const TextSpan(text: 'Upcoming Tutorial\n'),
-                        TextSpan(
-                          text: value.title,
-                          style: TextStyle(fontSize: 48),
-                        ),
-                      ],
-                    ),
-                  );
+                  return const AboutView();
                 }
               }),
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: listMenu
+                  .map((currentMenuItem) => buildMenuButton(currentMenuItem))
+                  .toList(),
             ),
           ],
         ));
